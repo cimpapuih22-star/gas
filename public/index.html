@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Aplikasi Peminjaman - Lengkap</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">📦</div>
+      <h1>AsetTracker</h1>
+      <nav>
+        <button data-view="assets" class="active">Assets</button>
+        <button data-view="loans">Peminjaman</button>
+        <button data-view="returns">Pengembalian</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header>
+        <input id="search" placeholder="Cari asset, brand, model..." />
+        <button id="btnAdd">+ Tambah Asset</button>
+      </header>
+
+      <section id="assets" class="view">
+        <h2>Daftar Asset</h2>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <section id="loans" class="view hidden">
+        <h2>Peminjaman</h2>
+        <form id="loanForm" class="form">
+          <label>Pilih Asset
+            <select id="loanAsset"></select>
+          </label>
+          <label>Nama Peminjam <input id="loanBorrower" required/></label>
+          <label>Tanggal <input type="date" id="loanDate" required/></label>
+          <button class="primary">Simpan & Kembali</button>
+        </form>
+        <h3>Peminjaman Aktif</h3>
+        <div id="loanList"></div>
+      </section>
+
+      <section id="returns" class="view hidden">
+        <h2>Pengembalian</h2>
+        <form id="returnForm" class="form">
+          <label>Pilih Peminjaman <select id="returnLoan"></select></label>
+          <label>Nama Pengembali <input id="returnBy" required/></label>
+          <label>Tanggal <input type="date" id="returnDate" required/></label>
+          <label>Kondisi Saat Dikembalikan <input id="returnCondition" required/></label>
+          <button class="primary">Simpan & Kembali</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modals container -->
+  <div id="modals"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
